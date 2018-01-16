@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Assignment5.Controllers.MediaTypeBase>
+
+@{
+    ViewBag.Title = "Types of Medias";
+}
+
+<h2>Types of Medias</h2>
+
+<p>
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+
+                @Html.ActionLink("Details", "Details", new { id = item.MediaTypeId })
+
+            </td>
+        </tr>
+    }
+
+</table>
